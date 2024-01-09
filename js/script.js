@@ -40,17 +40,9 @@ console.log(error);
 const fullTicket = kmCount * 0.21;
 console.log('full tiket price', fullTicket);
 
-// se error = true: 
-if (error) {
-    /*
-        alert: i dati inseriti non sono corretti
-        stop
-    */
-    alert('i dati inseriti non sono corretti');
-
-// altrimenti
-} else {
-
+// se non ci sono errori
+if (!error) {
+    
     // se l'età è <= 17:
     if (passengerAge <= 17) {
 
@@ -81,4 +73,13 @@ if (error) {
         // stampare in console o in pagina
         console.log('prezzo finale', finalPrice);
     }
+
+// altrimenti
+} else {
+
+    /*
+        alert: i dati inseriti non sono corretti
+        stop
+    */
+        alert('i dati inseriti non sono corretti');
 }
