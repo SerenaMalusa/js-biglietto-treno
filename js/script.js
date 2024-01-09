@@ -1,3 +1,6 @@
+/* VARIABLES */
+const title = document.getElementById('final-price');
+
 // creare variabile error = false 
 let error = false;
 
@@ -42,37 +45,39 @@ console.log('full tiket price', fullTicket);
 
 // se non ci sono errori
 if (!error) {
+
+    let discountPercentage = 0;
     
     // se l'età è <= 17:
     if (passengerAge <= 17) {
 
-        // calcolare il 20% di sconto
-        let discountedTicket = (fullTicket * 20) / 100; 
-        console.log('sconto 20 x minorenni', discountedTicket);
-        // trasformarla in stringa, concatenarla con '€'
-        let finalPrice = discountedTicket.toFixed(2).toString() + '€';
-        // stampare in console o in pagina
-        console.log('prezzo finale', finalPrice);
+        discountPercentage = 20;
 
     // altrimenti se l'età è >= 65:
     } else if (passengerAge >= 65) {
 
-        // calcolare il 40% di sconto
-        let discountedTicket = (fullTicket * 40) / 100; 
-        console.log('sconto 40 x ultra65enni', discountedTicket);
-        // trasformarla in stringa, concatenarla con '€'
-        let finalPrice = discountedTicket.toFixed(2).toString() + '€';
-        // stampare in console o in pagina
-        console.log('prezzo finale', finalPrice);
+        discountPercentage = 40;
     
     // altrimenti:
     } else {
 
-        // prendere il prezzo pieno, trasformarla in stringa, concatenarla con '€'
-        let finalPrice = fullTicket.toFixed(2).toString() + '€';
-        // stampare in console o in pagina
-        console.log('prezzo finale', finalPrice);
+        discountPercentage = 0;
     }
+
+    // calcolare il 20% di sconto
+    let discountedTicket = fullTicket - ((fullTicket * discountPercentage) / 100); 
+    // trasformarla in stringa, concatenarla con '€'
+    let finalPrice = discountedTicket.toFixed(2).toString() + '€';
+    // stampare in console e in pagina
+    console.log('% di sconto', discountPercentage, 'prezzo intero', fullTicket, 'prezzo finale', finalPrice);
+    title.innerHTML =   `
+                        km da percorrere: ${kmCount} <br />
+                        prezzo intero: ${fullTicket} € <br />
+                        età passeggero: ${passengerAge} <br />
+                        % di sconto: ${discountPercentage} <br />
+                        prezzo finale: ${finalPrice}                 
+                        `
+
 
 // altrimenti
 } else {
