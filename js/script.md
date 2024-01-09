@@ -24,10 +24,10 @@ far apparire alert che dice che i dati non sono corretti
     - chiedere numero di KM 
     - eliminare spazi
     - trasformare l'informazione da stringa a numero intero
-    - se valore = Nan:
-        - error = true
     - salvare in una variabile
     - stampare in console o in pagina
+    - se valore = Nan:
+        - error = true
 <br />
 <br />
 
@@ -35,10 +35,10 @@ far apparire alert che dice che i dati non sono corretti
     - chiedere età del passeggero
     - eliminare spazi
     - trasformare l'informazione da stringa a numero intero
-    - se valore = Nan:
-        - error = true
     - salvare in una variabile
     - stampare in console o in pagina
+    - se valore = Nan:
+        - error = true
 <br />
 <br />
 
@@ -76,7 +76,11 @@ far apparire alert che dice che i dati non sono corretti
 
         8) 
             - altrimenti:
-                -  stampare il prezzo pieno in console o in pagina
+                - prendere il prezzo pieno
+                - arrotondare la cifra a 2 decimali
+                - trasformarla in stringa
+                - concatenarla con '€'
+                -  stampare in console o in pagina
 
 ### Soluzione bonus
 far apparire altro prompt che chiede subito inserimento dei dati corretti.
