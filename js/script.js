@@ -59,11 +59,7 @@ if (passengerAge <= 17) {
 
     discountPercentage = 40;
 
-// altrimenti:
-} else {
-
-    discountPercentage = 0;
-}
+} 
 
 // calcolare il 20% di sconto
 let discountedTicket = fullTicket - ((fullTicket * discountPercentage) / 100); 
